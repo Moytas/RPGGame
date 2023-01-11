@@ -58,14 +58,59 @@ namespace RPGGame
           lbl_Cha.Text = String.Format("Charisma:{0}", _cha);
           break;
       }
+
       if (index < 6)
       {
         index++;
       }
       else
       {
-        Player p = new Player()
+        Player p = new Player(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+        cb_ClassChoise.Visible = true;
+        btn_Roll.Visible = false;
+
+        cb_ClassChoise.Items.Clear();
+        
+
+        if(_str >= 9)
+        {
+          cb_ClassChoise.Items.Add("Fighter");
+        }
+
+        if (_dex >= 9)
+        {
+          cb_ClassChoise.Items.Add("Thief");
+        }
+        if (_wis >= 9)
+        {
+          cb_ClassChoise.Items.Add("Priest");
+        }
+
+        if (_int >= 9)
+        {
+          cb_ClassChoise.Items.Add("Wizard");
+        }
+
+        if(cb_ClassChoise.Items.Count == 0)
+        {
+          Reset();
+        }
       }
+    }
+
+    void Reset()
+    {
+      if(btn_Roll.Visible == false)
+      {
+        btn_Roll.Visible = true;
+      }
+      index = 0;
+      lbl_Str.Text = "Str";
+      lbl_Dex.Text = "Dex";
+      lbl_Con.Text = "Con";
+      lbl_Int.Text = "Int";
+      lbl_Wis.Text = "Wis";
+      lbl_Cha.Text = "char";
     }
 
     int RollStat()

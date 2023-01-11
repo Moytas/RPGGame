@@ -32,6 +32,7 @@
       this.btn_Exit = new System.Windows.Forms.Button();
       this.lbl_Name = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.cb_ClassChoise = new System.Windows.Forms.ComboBox();
       this.lbl_Cha = new System.Windows.Forms.Label();
       this.lbl_Wis = new System.Windows.Forms.Label();
       this.lbl_Int = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.Color.Tomato;
+      this.panel1.Controls.Add(this.cb_ClassChoise);
       this.panel1.Controls.Add(this.lbl_Cha);
       this.panel1.Controls.Add(this.lbl_Wis);
       this.panel1.Controls.Add(this.lbl_Int);
@@ -90,6 +92,23 @@
       this.panel1.Size = new System.Drawing.Size(643, 305);
       this.panel1.TabIndex = 3;
       this.panel1.Visible = false;
+      // 
+      // cb_ClassChoise
+      // 
+      this.cb_ClassChoise.FormattingEnabled = true;
+      this.cb_ClassChoise.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+      this.cb_ClassChoise.Location = new System.Drawing.Point(424, 38);
+      this.cb_ClassChoise.Name = "cb_ClassChoise";
+      this.cb_ClassChoise.Size = new System.Drawing.Size(121, 23);
+      this.cb_ClassChoise.TabIndex = 12;
+      this.cb_ClassChoise.Visible = false;
       // 
       // lbl_Cha
       // 
@@ -203,5 +222,6 @@
     private Label lbl_Int;
     private Label lbl_Con;
     private Label lbl_Dex;
+    private ComboBox cb_ClassChoise;
   }
 }
