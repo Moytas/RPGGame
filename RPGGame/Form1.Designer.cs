@@ -109,6 +109,7 @@
       this.cb_ClassChoise.Size = new System.Drawing.Size(121, 23);
       this.cb_ClassChoise.TabIndex = 12;
       this.cb_ClassChoise.Visible = false;
+      this.cb_ClassChoise.SelectedIndexChanged += new System.EventHandler(this.cb_ClassChoise_SelectedIndexChanged);
       // 
       // lbl_Cha
       // 

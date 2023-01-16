@@ -2,6 +2,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace RPGGame
 {
+
   public partial class Form1 : Form
   {
     int index = 0;
@@ -19,7 +20,32 @@ namespace RPGGame
       btn_Roll.Enabled = false;
     }
 
-    private void Btn_Start_Click(object sender, EventArgs e)
+        private void cb_ClassChoise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+      switch (cb_ClassChoise.Text)
+      {
+        case "Fighter":
+          Fighter f = new Fighter(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          break;
+        case "Thief":
+          Thief t = new Thief(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          break;
+        case "Priest":
+          Priest p = new Priest(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          break;
+        case "Mage":
+          Mage m = new Mage(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          break;
+          //default:
+          //  Fighter f = new Fighter(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          //  index = -1;
+          //  break;
+      }
+
+      btn_Accept.Location = new Point(cb_ClassChoise.Location.X,cb_ClassChoise.Location.Y + 30);
+        }
+
+        private void Btn_Start_Click(object sender, EventArgs e)
     {
       panel1.Visible = true;
     }
@@ -27,6 +53,26 @@ namespace RPGGame
     private void btn_Accept_Click(object sender, EventArgs e)
     {
       btn_Roll.Enabled = true;
+
+      if(cb_ClassChoise.Visible)
+      {
+        switch(cb_ClassChoise.Text)
+        {
+          case "Fighter":
+            Weapons weaponsForm = new Weapons();
+            weaponsForm.Show();
+            break;
+          case "Wizard":
+            MageSpells mageForm = new MageSpells();
+            mageForm.Show();
+            break;
+          case "Thief":
+            ThiefSkills thiefForm = new ThiefSkills();
+            thiefForm.Show();
+            break;
+        }
+        
+      }
     }
 
     private void btn_Roll_Click(object sender, EventArgs e)
@@ -65,7 +111,16 @@ namespace RPGGame
       }
       else
       {
-        Player p = new Player(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+        //Player p = new Player(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+
+        //**************************************
+        //FOR TESTING DELETE LATER!!!!!
+        if(_dex < 9)
+        {
+          _dex = 10;
+        }
+        //****************************************
+
         cb_ClassChoise.Visible = true;
         btn_Roll.Visible = false;
 

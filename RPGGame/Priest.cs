@@ -6,24 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPGGame
 {
-  public class Player
+  public class Priest : Player
   {
-    public string Name;
-    public int STRENGTH, DEXTERITY, CONSTITUTION, INTELLIGENCE, WISDOM, CHARISMA;
-
-    public Player() //DO NOT USE
-    { }
-
-    public Player(string name,int str,int dex,int con,int intl,int wis,int cha)
+    public Priest(string name, int str, int dex, int con, int intl, int wis,
+      int cha)
     {
       Name = name;
       STRENGTH = str;
       DEXTERITY = dex;
       CONSTITUTION = con;
       INTELLIGENCE = intl;
-      WISDOM = wis;
       CHARISMA = cha;
     }
-
   }
 }
