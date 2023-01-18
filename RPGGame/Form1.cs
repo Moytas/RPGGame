@@ -1,4 +1,6 @@
 using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using System.Text;
 
 namespace RPGGame
 {
@@ -7,11 +9,13 @@ namespace RPGGame
   {
     int index = 0;
     int _str, _dex, _con, _int, _wis, _cha;
+    string filePath;
 
     public Form1()
     {
       InitializeComponent();
-      InitialSettings();      
+      InitialSettings();
+      filePath = @"C:\Test\";
     }
 
     void InitialSettings()
@@ -26,6 +30,27 @@ namespace RPGGame
       {
         case "Fighter":
           Fighter f = new Fighter(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
+          filePath += @"Fighter\";
+          if(File.Exists(filePath))
+          {
+            using (FileStream fs = File.Create(filePath))
+            {
+              byte[] info = new UTF8Encoding(true).GetBytes(f.Name);
+              // Add some information to the file.
+              fs.Write(info, 0, info.Length);
+            }
+          }
+          else
+          {
+            Directory.CreateDirectory(filePath);
+            filePath += "fighter.txt";
+                        using (FileStream fs = File.Create(filePath))
+            {
+              byte[] info = new UTF8Encoding(true).GetBytes(string.Format("Name:{0} str:{1} ... ",f.Name,f.STRENGTH));
+              // Add some information to the file.
+              fs.Write(info, 0, info.Length);
+            }
+          }
           break;
         case "Thief":
           Thief t = new Thief(tb_Name.Text, _str, _dex, _con, _int, _wis, _cha);
@@ -115,9 +140,9 @@ namespace RPGGame
 
         //**************************************
         //FOR TESTING DELETE LATER!!!!!
-        if(_int < 9)
+        if(_str < 9)
         {
-          _int = 10;
+          _str = 10;
         }
         //****************************************
 
