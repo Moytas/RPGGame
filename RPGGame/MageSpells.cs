@@ -18,7 +18,7 @@ namespace RPGGame
     {
       InitializeComponent();
       storage = new Storage();
-      
+
       //for(int i = 0; i < storage.MageSpells.Count; i++)
       //{
       //  lb_Available.Items.Add(storage.MageSpells[i].Name);
