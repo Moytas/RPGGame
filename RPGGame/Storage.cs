@@ -29,7 +29,7 @@ namespace RPGGame
     {
 
      // connector = new DatabaseConnector();
-      connector.AddSpellMage("Spell a", "blah blah");
+      //connector.AddSpellMage("Spell a", "blah blah");
       //MageSpells.Add(new Spell("Spell 1", "A simple spell", 1, 1, 3));
       //MageSpells.Add(new Spell("Spell 2","a more complicated spell",3,2,8));
       //MageSpells.Add(new Spell("Spell 3", "A complex spell", 1, 1, 3));

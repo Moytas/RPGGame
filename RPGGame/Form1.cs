@@ -84,6 +84,14 @@ namespace RPGGame
         switch(cb_ClassChoise.Text)
         {
           case "Fighter":
+            //using (var ctx = new DBCreator())
+            //{
+            //  var fighter = new Fighter() { Name = "Test" };
+              
+            //  ctx.Fighters.Add(fighter);
+            //  ctx.SaveChanges();
+            //}
+
             Weapons weaponsForm = new Weapons();
             weaponsForm.Show();
             break;

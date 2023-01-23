@@ -8,10 +8,15 @@ namespace RPGGame
 {
   public class Fighter : Player
   {
-    //public Fighter()
-    //{
+    public int Id { get; set; }
+    public Weapons Weapon { get; set; }
 
-    //}
+
+    public Fighter()
+    {
+
+    }
+
 
     public Fighter(string name,int str,int dex,int con,int intl,int wis,
       int cha)
