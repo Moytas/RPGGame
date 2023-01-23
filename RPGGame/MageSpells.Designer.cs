@@ -35,6 +35,7 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.lb_Description = new System.Windows.Forms.Label();
+      this.button3 = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // lb_Available
@@ -64,6 +65,7 @@
       this.button1.TabIndex = 2;
       this.button1.Text = "button1";
       this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
       // button2
       // 
@@ -101,11 +103,22 @@
       this.lb_Description.TabIndex = 6;
       this.lb_Description.Text = "Description:";
       // 
+      // button3
+      // 
+      this.button3.Location = new System.Drawing.Point(454, 318);
+      this.button3.Name = "button3";
+      this.button3.Size = new System.Drawing.Size(75, 23);
+      this.button3.TabIndex = 7;
+      this.button3.Text = "Save";
+      this.button3.UseVisualStyleBackColor = true;
+      this.button3.Click += new System.EventHandler(this.button3_Click);
+      // 
       // MageSpells
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.button3);
       this.Controls.Add(this.lb_Description);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
@@ -129,5 +142,6 @@
         private Label label1;
         private Label label2;
         private Label lb_Description;
+        private Button button3;
     }
 }
